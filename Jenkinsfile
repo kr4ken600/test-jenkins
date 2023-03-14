@@ -10,18 +10,18 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Frontend Web') {
-            steps {
-                echo 'Deploy Frontend Angular'
-                bat 'docker build -t frontalex .'
-                bat 'docker run -d -p 9090:80 frontalex'
-            }
-        }
+        // stage('Deploy Frontend Web') {
+        //     steps {
+        //         echo 'Deploy Frontend Angular'
+        //         bat 'docker build -t frontalex .'
+        //         bat 'docker run -d -p 9090:80 frontalex'
+        //     }
+        // }
     }
     post { 
-        always { 
-            deleteDir()
-        }
+        // always { 
+        //     deleteDir()
+        // }
         success {
             echo 'I succeeeded!'
         }
